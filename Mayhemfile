@@ -1,0 +1,19 @@
+project: Gediminas19/tree-sitter
+target: tree-sitter
+duration: 90
+
+cmds:
+  - cmd: /tree-sitter/script/run-fuzzer bash halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer c halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer cpp halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer embedded-template halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer go halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer html halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer java halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer javascript halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer jsdoc halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer json halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer php halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer python halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer ruby halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/script/run-fuzzer rust halt -jobs=32 -workers=32
