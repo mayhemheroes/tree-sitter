@@ -6,7 +6,7 @@ cmds:
   - cmd: /tree-sitter/out/bash_fuzzer -dict=/tree-sitter/out/bash.dict -artifact_prefix=bash_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/bash/corpus -jobs=32 -workers=32
   - cmd: /tree-sitter/out/c_fuzzer -dict=/tree-sitter/out/c.dict -artifact_prefix=c_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/c/corpus -jobs=32 -workers=32
   - cmd: /tree-sitter/out/cpp_fuzzer -dict=/tree-sitter/out/cpp.dict -artifact_prefix=cpp_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/cpp/corpus -jobs=32 -workers=32
-  - cmd: /tree-sitter/out/embedded_fuzzer -dict=/tree-sitter/out/embedded.dict -artifact_prefix=embedded_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/embedded/corpustemplate halt -jobs=32 -workers=32
+  - cmd: /tree-sitter/out/embedded-template_fuzzer -dict=/tree-sitter/out/embedded-template.dict -artifact_prefix=embedded_template_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/embedded-template/corpus -jobs=32 -workers=32
   - cmd: /tree-sitter/out/go_fuzzer -dict=/tree-sitter/out/go.dict -artifact_prefix=go_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/go/corpus -jobs=32 -workers=32
   - cmd: /tree-sitter/out/html_fuzzer -dict=/tree-sitter/out/html.dict -artifact_prefix=html_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/html/corpus -jobs=32 -workers=32
   - cmd: /tree-sitter/out/java_fuzzer -dict=/tree-sitter/out/java.dict -artifact_prefix=java_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/java/corpus -jobs=32 -workers=32
