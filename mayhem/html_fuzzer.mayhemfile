@@ -1,0 +1,5 @@
+project: tree-sitter
+target: html_fuzzer
+
+cmds:
+  - cmd: /tree-sitter/out/html_fuzzer -dict=/tree-sitter/out/html.dict -artifact_prefix=html_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/html/corpus -jobs=32 -workers=32

@@ -1,0 +1,5 @@
+project: tree-sitter
+target: go_fuzzer
+
+cmds:
+  - cmd: /tree-sitter/out/go_fuzzer -dict=/tree-sitter/out/go.dict -artifact_prefix=go_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/go/corpus -jobs=32 -workers=32

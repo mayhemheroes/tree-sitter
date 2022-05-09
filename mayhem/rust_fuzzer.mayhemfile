@@ -1,0 +1,5 @@
+project: tree-sitter
+target: rust_fuzzer
+
+cmds:
+  - cmd: /tree-sitter/out/rust_fuzzer -dict=/tree-sitter/out/rust.dict -artifact_prefix=rust_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/rust/corpus -jobs=32 -workers=32

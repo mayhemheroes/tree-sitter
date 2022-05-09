@@ -1,0 +1,5 @@
+project: tree-sitter
+target: php_fuzzer
+
+cmds:
+  - cmd: /tree-sitter/out/php_fuzzer -dict=/tree-sitter/out/php.dict -artifact_prefix=php_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/php/corpus -jobs=32 -workers=32
