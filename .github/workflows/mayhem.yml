@@ -20,6 +20,8 @@ jobs:
         include:
           - os: ubuntu-latest
             triplet: x64-linux
+    output:
+      metatags: ${{ steps.meta.outputs.tags }}
 
     steps:
       - uses: actions/checkout@v2
@@ -64,7 +66,7 @@ jobs:
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }}
+          args: --image ${{ needs.build.outputs.metatags }}
                 --file mayhem/${{ matrix.mayhemfile }}
           sarif-output: sarif
 
