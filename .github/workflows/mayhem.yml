@@ -20,7 +20,7 @@ jobs:
         include:
           - os: ubuntu-latest
             triplet: x64-linux
-    output:
+    outputs:
       metatags: ${{ steps.meta.outputs.tags }}
 
     steps:
