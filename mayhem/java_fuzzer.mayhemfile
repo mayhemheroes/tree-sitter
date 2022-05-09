@@ -1,0 +1,5 @@
+project: tree-sitter
+target: java_fuzzer
+
+cmds:
+  - cmd: /tree-sitter/out/java_fuzzer -dict=/tree-sitter/out/java.dict -artifact_prefix=java_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/java/corpus -jobs=32 -workers=32

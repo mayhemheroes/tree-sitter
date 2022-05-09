@@ -1,0 +1,5 @@
+project: tree-sitter
+target: jsdoc_fuzzer
+
+cmds:
+  - cmd: /tree-sitter/out/jsdoc_fuzzer -dict=/tree-sitter/out/jsdoc.dict -artifact_prefix=jsdoc_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/jsdoc/corpus -jobs=32 -workers=32
