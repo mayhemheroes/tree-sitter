@@ -1,8 +1,10 @@
 name: Mayhem
+
 on:
   push:
   pull_request:
   workflow_dispatch:
+  workflow_call:
 
 env:
   REGISTRY: ghcr.io
@@ -10,7 +12,7 @@ env:
 
 jobs:
   build:
-    name: '${{ matrix.os }} shared=${{ matrix.shared }} ${{ matrix.build_type }}'
+    name: ${{ matrix.os }} shared=${{ matrix.shared }} ${{ matrix.build_type }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -52,6 +54,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/cpp_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for html_fuzzer
@@ -68,6 +71,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/jsdoc_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for python_fuzzer
@@ -76,6 +80,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/python_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for bash_fuzzer
@@ -84,6 +89,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/bash_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for embedded-template_fuzzer
@@ -92,6 +98,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/embedded-template_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for java_fuzzer
@@ -100,6 +107,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/java_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for json_fuzzer
@@ -108,6 +116,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/json_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for ruby_fuzzer
@@ -116,6 +125,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/ruby_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for c_fuzzer
@@ -124,6 +134,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/c_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for go_fuzzer
@@ -132,6 +143,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/go_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for javascript_fuzzer
@@ -140,6 +152,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/javascript_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for php_fuzzer
@@ -148,6 +161,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/php_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Start analysis for rust_fuzzer
@@ -156,6 +170,7 @@ jobs:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/rust_fuzzer
+                --duration 300
           sarif-output: sarif
 
       - name: Upload SARIF file(s)
