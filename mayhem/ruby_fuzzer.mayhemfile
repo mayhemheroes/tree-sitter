@@ -2,4 +2,5 @@ project: tree-sitter
 target: ruby_fuzzer
 
 cmds:
-  - cmd: /tree-sitter/out/ruby_fuzzer -dict=/tree-sitter/out/ruby.dict -artifact_prefix=ruby_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/ruby/corpus -jobs=32 -workers=32
+  - cmd: /ruby_fuzzer -artifact_prefix=ruby_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 -jobs=32 -workers=32
+    dictionary: /ruby.dict
