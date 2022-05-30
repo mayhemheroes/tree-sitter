@@ -2,4 +2,5 @@ project: tree-sitter
 target: embedded-template_fuzzer
 
 cmds:
-  - cmd: /tree-sitter/out/embedded-template_fuzzer -dict=/tree-sitter/out/embedded-template.dict -artifact_prefix=embedded_template_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/embedded-template/corpus -jobs=32 -workers=32
+  - cmd: /embedded-template_fuzzer -artifact_prefix=embedded_template_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 -jobs=32 -workers=32
+    dictionary: /embedded-template.dict

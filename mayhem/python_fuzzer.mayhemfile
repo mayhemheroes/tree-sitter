@@ -2,4 +2,5 @@ project: tree-sitter
 target: python_fuzzer
 
 cmds:
-  - cmd: /tree-sitter/out/python_fuzzer -dict=/tree-sitter/out/python.dict -artifact_prefix=python_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 /tree-sitter/out/fuzz-results/python/corpus -jobs=32 -workers=32
+  - cmd: /python_fuzzer -artifact_prefix=python_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 -jobs=32 -workers=32
+    dictionary: /python.dict
