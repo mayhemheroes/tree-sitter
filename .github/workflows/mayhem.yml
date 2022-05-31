@@ -53,7 +53,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/cpp_fuzzer
+                --file mayhem/cpp_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -62,7 +62,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/html_fuzzer
+                --file mayhem/html_fuzzer.mayhemfile
           sarif-output: sarif
 
       - name: Start analysis for jsdoc_fuzzer
@@ -70,7 +70,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/jsdoc_fuzzer
+                --file mayhem/jsdoc_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -79,7 +79,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/python_fuzzer
+                --file mayhem/python_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -88,7 +88,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/bash_fuzzer
+                --file mayhem/bash_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -97,7 +97,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/embedded-template_fuzzer
+                --file mayhem/embedded-template_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -106,7 +106,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/java_fuzzer
+                --file mayhem/java_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -115,7 +115,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/json_fuzzer
+                --file mayhem/json_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -124,7 +124,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/ruby_fuzzer
+                --file mayhem/ruby_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -133,7 +133,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/c_fuzzer
+                --file mayhem/c_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -142,7 +142,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/go_fuzzer
+                --file mayhem/go_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -151,7 +151,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/javascript_fuzzer
+                --file mayhem/javascript_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -160,7 +160,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/php_fuzzer
+                --file mayhem/php_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -169,7 +169,7 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/rust_fuzzer
+                --file mayhem/rust_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
