@@ -1,0 +1,6 @@
+project: tree-sitter
+target: embedded-template_fuzzer
+
+cmds:
+  - cmd: /embedded-template_fuzzer -artifact_prefix=embedded_template_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 -jobs=32 -workers=32
+    dictionary: /embedded-template.dict

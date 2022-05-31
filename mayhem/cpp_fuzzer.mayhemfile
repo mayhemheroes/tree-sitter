@@ -1,0 +1,6 @@
+project: tree-sitter
+target: cpp_fuzzer
+
+cmds:
+  - cmd: /cpp_fuzzer -artifact_prefix=cpp_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 -jobs=32 -workers=32
+    dictionary: /cpp.dict

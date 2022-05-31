@@ -1,12 +1,15 @@
 name: Mayhem
-on: 
+
+on:
   push:
   pull_request:
   workflow_dispatch:
   workflow_call:
+
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+
 jobs:
   build:
     name: ${{ matrix.os }} shared=${{ matrix.shared }} ${{ matrix.build_type }}
@@ -17,35 +20,160 @@ jobs:
         shared: [false]
         build_type: [Release]
         include:
-        - os: ubuntu-latest
-          triplet: x64-linux
+          - os: ubuntu-latest
+            triplet: x64-linux
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Log in to the Container registry
-      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
-      with:
-        registry: ${{ env.REGISTRY }}
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-    - name: Extract metadata (tags, labels) for Docker
-      id: meta
-      uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-      with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-    - name: Build and push Docker image
-      uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
-      with:
-        context: .
-        push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
-    - name: Start analysis
-      uses: forallsecure/mcode-action@v1
-      with:
-        mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --duration 300
-        sarif-output: sarif
-    - name: Upload SARIF file(s)
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: sarif
+      - uses: actions/checkout@v2
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          file: mayhem/Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Start analysis for cpp_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/cpp_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for html_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/html_fuzzer
+          sarif-output: sarif
+
+      - name: Start analysis for jsdoc_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/jsdoc_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for python_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/python_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for bash_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/bash_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for embedded-template_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/embedded-template_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for java_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/java_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for json_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/json_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for ruby_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/ruby_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for c_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/c_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for go_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/go_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for javascript_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/javascript_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for php_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/php_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for rust_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/rust_fuzzer
+                --duration 300
+          sarif-output: sarif
+
+      - name: Upload SARIF file(s)
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: sarif

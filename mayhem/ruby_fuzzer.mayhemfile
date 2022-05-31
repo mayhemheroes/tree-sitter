@@ -1,0 +1,6 @@
+project: tree-sitter
+target: ruby_fuzzer
+
+cmds:
+  - cmd: /ruby_fuzzer -artifact_prefix=ruby_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 -jobs=32 -workers=32
+    dictionary: /ruby.dict
