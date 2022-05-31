@@ -29,7 +29,7 @@ run_fuzzer() {
   # then be loaded on subsequent fuzzing runs
   mkdir -p corpus
 
-  "../../${lang}_fuzzer" "-dict=../../${lang}.dict" "-artifact_prefix=${lang}_${mode}_" -max_len=2048 ${mode_config[$mode]} "./corpus" "$@"
+  "../../${lang}_fuzzer_${mode}" "-dict=../../${lang}.dict" "-artifact_prefix=${lang}_${mode}_" -max_len=2048 ${mode_config[$mode]} "./corpus" "$@"
 }
 
 reproduce() {
@@ -46,7 +46,7 @@ reproduce() {
   shift
   # Treat remainder of arguments as libFuzzer arguments
 
-  "${root}/out/${lang}_fuzzer" ${mode_config[$mode]} -runs=1 "${testcase}" "$@"
+  "${root}/out/${lang}_fuzzer_${mode}" ${mode_config[$mode]} -runs=1 "${testcase}" "$@"
 }
 
 script=$(basename "$0")
