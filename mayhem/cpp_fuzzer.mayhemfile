@@ -4,3 +4,4 @@ target: cpp_fuzzer
 cmds:
   - cmd: /cpp_fuzzer
     dictionary: /cpp.dict
+    timeout: 10
