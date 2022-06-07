@@ -2,5 +2,7 @@ project: tree-sitter
 target: c_fuzzer
 
 cmds:
-  - cmd: /c_fuzzer -artifact_prefix=c_halt_ -max_len=2048 -timeout=1 -rss_limit_mb=256 -jobs=32 -workers=32
+  - cmd: /c_fuzzer -artifact_prefix=c_halt_
     dictionary: /c.dict
+    max_length: 2048
+    timeout: 10
