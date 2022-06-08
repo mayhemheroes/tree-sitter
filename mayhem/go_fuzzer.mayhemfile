@@ -1,7 +1,12 @@
 project: tree-sitter
-target: go_fuzzer
+target: go-fuzzer
 
 cmds:
   - cmd: /go_fuzzer
     dictionary: /go.dict
     timeout: 10
+    memory_limit: 256
+    max_length: 2048
+    env:
+      ASAN_OPTIONS: quarantine_size_mb=10:detect_leaks=1:symbolize=1
+      UBSAN: print_stacktrace=1:halt_on_error=1:symbolize=1
