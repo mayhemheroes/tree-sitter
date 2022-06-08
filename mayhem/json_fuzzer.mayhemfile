@@ -2,7 +2,6 @@ project: tree-sitter
 target: json_fuzzer
 
 cmds:
-  - cmd: /json_fuzzer -artifact_prefix=json_halt_
+  - cmd: /json_fuzzer
     dictionary: /json.dict
-    max_length: 2048
     timeout: 10

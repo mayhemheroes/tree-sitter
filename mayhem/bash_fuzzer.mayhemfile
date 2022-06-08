@@ -2,7 +2,6 @@ project: tree-sitter
 target: bash_fuzzer
 
 cmds:
-  - cmd: /bash_fuzzer -artifact_prefix=bash_halt_
+  - cmd: /bash_fuzzer
     dictionary: /bash.dict
-    max_length: 2048
     timeout: 10

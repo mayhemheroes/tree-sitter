@@ -2,7 +2,6 @@ project: tree-sitter
 target: ruby_fuzzer
 
 cmds:
-  - cmd: /ruby_fuzzer -artifact_prefix=ruby_halt_
+  - cmd: /ruby_fuzzer
     dictionary: /ruby.dict
-    max_length: 2048
     timeout: 10

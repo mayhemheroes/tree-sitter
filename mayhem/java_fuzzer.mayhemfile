@@ -2,7 +2,6 @@ project: tree-sitter
 target: java_fuzzer
 
 cmds:
-  - cmd: /java_fuzzer -artifact_prefix=java_halt_
+  - cmd: /java_fuzzer
     dictionary: /java.dict
-    max_length: 2048
     timeout: 10

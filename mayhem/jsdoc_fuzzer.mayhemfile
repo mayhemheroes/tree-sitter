@@ -2,7 +2,6 @@ project: tree-sitter
 target: jsdoc_fuzzer
 
 cmds:
-  - cmd: /jsdoc_fuzzer -artifact_prefix=jsdoc_halt_
+  - cmd: /jsdoc_fuzzer
     dictionary: /jsdoc.dict
-    max_length: 2048
     timeout: 10

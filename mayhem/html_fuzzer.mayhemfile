@@ -2,7 +2,6 @@ project: tree-sitter
 target: html_fuzzer
 
 cmds:
-  - cmd: /html_fuzzer -artifact_prefix=html_halt_
+  - cmd: /html_fuzzer
     dictionary: /html.dict
-    max_length: 2048
     timeout: 10
