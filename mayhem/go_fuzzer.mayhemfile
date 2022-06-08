@@ -2,7 +2,6 @@ project: tree-sitter
 target: go_fuzzer
 
 cmds:
-  - cmd: /go_fuzzer -artifact_prefix=go_halt_
+  - cmd: /go_fuzzer
     dictionary: /go.dict
-    max_length: 2048
     timeout: 10

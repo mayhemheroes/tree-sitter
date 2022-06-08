@@ -2,7 +2,6 @@ project: tree-sitter
 target: c_fuzzer
 
 cmds:
-  - cmd: /c_fuzzer -artifact_prefix=c_halt_
+  - cmd: /c_fuzzer
     dictionary: /c.dict
-    max_length: 2048
     timeout: 10

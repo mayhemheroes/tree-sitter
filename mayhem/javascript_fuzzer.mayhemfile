@@ -2,7 +2,6 @@ project: tree-sitter
 target: javascript_fuzzer
 
 cmds:
-  - cmd: /javascript_fuzzer -artifact_prefix=javascript_halt_
+  - cmd: /javascript_fuzzer
     dictionary: /javascript.dict
-    max_length: 2048
     timeout: 10

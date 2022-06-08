@@ -2,7 +2,6 @@ project: tree-sitter
 target: php_fuzzer
 
 cmds:
-  - cmd: /php_fuzzer -artifact_prefix=php_halt_
+  - cmd: /php_fuzzer
     dictionary: /php.dict
-    max_length: 2048
     timeout: 10
