@@ -1,7 +1,12 @@
 project: tree-sitter
-target: cpp_fuzzer
+target: cpp-fuzzer
 
 cmds:
   - cmd: /cpp_fuzzer
     dictionary: /cpp.dict
     timeout: 10
+    memory_limit: 256
+    max_length: 2048
+    env:
+      ASAN_OPTIONS: quarantine_size_mb=10:detect_leaks=1:symbolize=1
+      UBSAN: print_stacktrace=1:halt_on_error=1:symbolize=1
