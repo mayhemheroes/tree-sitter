@@ -16,9 +16,8 @@ WORKDIR /tree-sitter
 
 ## build fuzzers
 RUN script/fetch-fixtures
-RUN rm -rf test/fixtures/grammars/typescript/
 RUN mkdir out && CC=clang CXX=clang++ LINK=clang++ LIB_FUZZER_PATH=/compiler-rt/lib/fuzzer/libFuzzer.a \
     script/build-fuzzers
 
 FROM ubuntu:20.04
-COPY --from=builder /tree-sitter/out /
+COPY --from=builder /tree-sitter/out /tree-sitter

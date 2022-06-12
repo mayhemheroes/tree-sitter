@@ -2,7 +2,7 @@ project: tree-sitter
 target: c-fuzzer
 
 cmds:
-  - cmd: /c_fuzzer
+  - cmd: /tree-sitter/c_fuzzer
     dictionary: /c.dict
     timeout: 10
     memory_limit: 256

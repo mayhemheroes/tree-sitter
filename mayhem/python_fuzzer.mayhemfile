@@ -2,7 +2,7 @@ project: tree-sitter
 target: python-fuzzer
 
 cmds:
-  - cmd: /python_fuzzer
+  - cmd: /tree-sitter/python_fuzzer
     dictionary: /python.dict
     timeout: 10
     memory_limit: 256

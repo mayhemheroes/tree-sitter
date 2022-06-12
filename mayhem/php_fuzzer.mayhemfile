@@ -2,7 +2,7 @@ project: tree-sitter
 target: php-fuzzer
 
 cmds:
-  - cmd: /php_fuzzer
+  - cmd: /tree-sitter/php_fuzzer
     dictionary: /php.dict
     timeout: 10
     memory_limit: 256

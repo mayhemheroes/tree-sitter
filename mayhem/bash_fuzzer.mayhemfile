@@ -2,7 +2,7 @@ project: tree-sitter
 target: bash-fuzzer
 
 cmds:
-  - cmd: /bash_fuzzer
+  - cmd: /tree-sitter/bash_fuzzer
     dictionary: /bash.dict
     timeout: 10
     memory_limit: 256

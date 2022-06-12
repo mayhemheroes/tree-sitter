@@ -2,7 +2,7 @@ project: tree-sitter
 target: go-fuzzer
 
 cmds:
-  - cmd: /go_fuzzer
+  - cmd: /tree-sitter/go_fuzzer
     dictionary: /go.dict
     timeout: 10
     memory_limit: 256
