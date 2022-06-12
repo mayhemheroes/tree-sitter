@@ -16,8 +16,8 @@ WORKDIR /tree-sitter
 
 ## fetch fuzzers for each language (typescript and tsx need extra preprocessing)
 RUN script/fetch-fixtures
-RUN mv test/fixtures/grammars/typescript test/fixtures/grammars/typescript_ && \
-    /bin/bash -c "mv test/fixtures/grammars/typescript_/{common,tsx,typescript} test/fixtures/grammars"
+RUN cd test/fixtures/grammars && mv typescript typescript_ && \
+    /bin/bash -c "mv typescript_/{common,tsx,typescript} ."
 
 ## build fuzzers
 RUN mkdir out && CC=clang CXX=clang++ LINK=clang++ LIB_FUZZER_PATH=/compiler-rt/lib/fuzzer/libFuzzer.a \

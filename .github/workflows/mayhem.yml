@@ -48,83 +48,12 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Start analysis for cpp_fuzzer
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/cpp_fuzzer.mayhemfile
-                --duration 300
-          sarif-output: sarif
-
-      - name: Start analysis for html_fuzzer
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/html_fuzzer.mayhemfile
-          sarif-output: sarif
-
-      - name: Start analysis for jsdoc_fuzzer
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/jsdoc_fuzzer.mayhemfile
-                --duration 300
-          sarif-output: sarif
-
-      - name: Start analysis for python_fuzzer
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/python_fuzzer.mayhemfile
-                --duration 300
-          sarif-output: sarif
-
       - name: Start analysis for bash_fuzzer
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/bash_fuzzer.mayhemfile
-                --duration 300
-          sarif-output: sarif
-
-      - name: Start analysis for embedded-template_fuzzer
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/embedded-template_fuzzer.mayhemfile
-                --duration 300
-          sarif-output: sarif
-
-      - name: Start analysis for java_fuzzer
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/java_fuzzer.mayhemfile
-                --duration 300
-          sarif-output: sarif
-
-      - name: Start analysis for json_fuzzer
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/json_fuzzer.mayhemfile
-                --duration 300
-          sarif-output: sarif
-
-      - name: Start analysis for ruby_fuzzer
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/ruby_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -137,12 +66,47 @@ jobs:
                 --duration 300
           sarif-output: sarif
 
+      - name: Start analysis for cpp_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/cpp_fuzzer.mayhemfile
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for embedded-template_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/embedded-template_fuzzer.mayhemfile
+                --duration 300
+          sarif-output: sarif
+
       - name: Start analysis for go_fuzzer
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/go_fuzzer.mayhemfile
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for html_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/html_fuzzer.mayhemfile
+          sarif-output: sarif
+
+      - name: Start analysis for java_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/java_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -155,12 +119,48 @@ jobs:
                 --duration 300
           sarif-output: sarif
 
+      - name: Start analysis for jsdoc_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/jsdoc_fuzzer.mayhemfile
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for json_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/json_fuzzer.mayhemfile
+                --duration 300
+          sarif-output: sarif
+
       - name: Start analysis for php_fuzzer
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/php_fuzzer.mayhemfile
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for python_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/python_fuzzer.mayhemfile
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for ruby_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/ruby_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
@@ -173,21 +173,21 @@ jobs:
                 --duration 300
           sarif-output: sarif
 
-      - name: Start analysis for typescript_fuzzer
-        uses: ForAllSecure/mcode-action@v1
-        with:
-          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --image ${{ steps.meta.outputs.tags }}
-                --file mayhem/typescript_fuzzer.mayhemfile
-                --duration 300
-          sarif-output: sarif
-
       - name: Start analysis for tsx_fuzzer
         uses: ForAllSecure/mcode-action@v1
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ steps.meta.outputs.tags }}
                 --file mayhem/tsx_fuzzer.mayhemfile
+                --duration 300
+          sarif-output: sarif
+
+      - name: Start analysis for typescript_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/typescript_fuzzer.mayhemfile
                 --duration 300
           sarif-output: sarif
 
