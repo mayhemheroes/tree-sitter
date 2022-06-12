@@ -200,6 +200,15 @@ jobs:
                 --duration 300
           sarif-output: sarif
 
+      - name: Start analysis for tsx_fuzzer
+        uses: ForAllSecure/mcode-action@v1
+        with:
+          mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
+          args: --image ${{ steps.meta.outputs.tags }}
+                --file mayhem/tsx_fuzzer.mayhemfile
+                --duration 300
+          sarif-output: sarif
+
       - name: Upload SARIF file(s)
         uses: github/codeql-action/upload-sarif@v1
         with:
