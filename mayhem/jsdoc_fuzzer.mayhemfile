@@ -3,7 +3,7 @@ target: jsdoc-fuzzer
 
 cmds:
   - cmd: /tree-sitter/jsdoc_fuzzer
-    dictionary: /jsdoc.dict
+    dictionary: /tree-sitter/jsdoc.dict
     timeout: 10
     memory_limit: 256
     max_length: 2048
