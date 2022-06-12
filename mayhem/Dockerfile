@@ -25,4 +25,4 @@ RUN mkdir out && CC=clang CXX=clang++ LINK=clang++ LIB_FUZZER_PATH=/compiler-rt/
     ruby rust typescript tsx
 
 FROM ubuntu:20.04
-COPY --from=builder /tree-sitter/out /tree-sitter
+COPY --from=builder /tree-sitter/out /

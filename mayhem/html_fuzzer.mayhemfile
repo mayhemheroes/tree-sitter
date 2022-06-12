@@ -2,8 +2,8 @@ project: tree-sitter
 target: html-fuzzer
 
 cmds:
-  - cmd: /tree-sitter/html_fuzzer
-    dictionary: /tree-sitter/html.dict
+  - cmd: /html_fuzzer
+    dictionary: /html.dict
     timeout: 10
     memory_limit: 256
     max_length: 2048
