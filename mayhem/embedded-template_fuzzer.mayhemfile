@@ -2,7 +2,7 @@ project: tree-sitter
 target: embedded-template-fuzzer
 
 cmds:
-  - cmd: /embedded-template_fuzzer
+  - cmd: /tree-sitter/embedded-template_fuzzer
     dictionary: /embedded-template.dict
     timeout: 10
     memory_limit: 256

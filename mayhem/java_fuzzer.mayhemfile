@@ -2,7 +2,7 @@ project: tree-sitter
 target: java-fuzzer
 
 cmds:
-  - cmd: /java_fuzzer
+  - cmd: /tree-sitter/java_fuzzer
     dictionary: /java.dict
     timeout: 10
     memory_limit: 256

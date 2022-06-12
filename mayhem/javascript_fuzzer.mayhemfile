@@ -2,7 +2,7 @@ project: tree-sitter
 target: javascript-fuzzer
 
 cmds:
-  - cmd: /javascript_fuzzer
+  - cmd: /tree-sitter/javascript_fuzzer
     dictionary: /javascript.dict
     timeout: 10
     memory_limit: 256
