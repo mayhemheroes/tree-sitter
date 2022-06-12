@@ -3,7 +3,7 @@ target: bash-fuzzer
 
 cmds:
   - cmd: /tree-sitter/bash_fuzzer
-    dictionary: /bash.dict
+    dictionary: /tree-sitter/bash.dict
     timeout: 10
     memory_limit: 256
     max_length: 2048

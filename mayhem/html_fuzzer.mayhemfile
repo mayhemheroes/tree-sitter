@@ -3,7 +3,7 @@ target: html-fuzzer
 
 cmds:
   - cmd: /tree-sitter/html_fuzzer
-    dictionary: /html.dict
+    dictionary: /tree-sitter/html.dict
     timeout: 10
     memory_limit: 256
     max_length: 2048

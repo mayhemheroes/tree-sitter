@@ -3,7 +3,7 @@ target: c-fuzzer
 
 cmds:
   - cmd: /tree-sitter/c_fuzzer
-    dictionary: /c.dict
+    dictionary: /tree-sitter/c.dict
     timeout: 10
     memory_limit: 256
     max_length: 2048

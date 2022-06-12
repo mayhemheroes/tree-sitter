@@ -3,7 +3,7 @@ target: php-fuzzer
 
 cmds:
   - cmd: /tree-sitter/php_fuzzer
-    dictionary: /php.dict
+    dictionary: /tree-sitter/php.dict
     timeout: 10
     memory_limit: 256
     max_length: 2048

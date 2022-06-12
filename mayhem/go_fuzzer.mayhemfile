@@ -3,7 +3,7 @@ target: go-fuzzer
 
 cmds:
   - cmd: /tree-sitter/go_fuzzer
-    dictionary: /go.dict
+    dictionary: /tree-sitter/go.dict
     timeout: 10
     memory_limit: 256
     max_length: 2048
