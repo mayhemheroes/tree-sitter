@@ -2,8 +2,8 @@ project: tree-sitter
 target: json-fuzzer
 
 cmds:
-  - cmd: /tree-sitter/json_fuzzer
-    dictionary: /tree-sitter/json.dict
+  - cmd: /json_fuzzer
+    dictionary: /json.dict
     timeout: 10
     memory_limit: 256
     max_length: 2048

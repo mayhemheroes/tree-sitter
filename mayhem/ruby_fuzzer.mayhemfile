@@ -2,8 +2,8 @@ project: tree-sitter
 target: ruby-fuzzer
 
 cmds:
-  - cmd: /tree-sitter/ruby_fuzzer
-    dictionary: /tree-sitter/ruby.dict
+  - cmd: /ruby_fuzzer
+    dictionary: /ruby.dict
     timeout: 10
     memory_limit: 256
     max_length: 2048
