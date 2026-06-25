@@ -1,0 +1,9 @@
+project: tree-sitter
+target: tsx-fuzzer
+
+cmds:
+  - cmd: /mayhem/tsx_fuzzer
+    dictionary: /mayhem/tsx.dict
+    timeout: 10
+    memory_limit: 256
+    max_length: 2048

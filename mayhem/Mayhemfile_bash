@@ -1,0 +1,9 @@
+project: tree-sitter
+target: bash-fuzzer
+
+cmds:
+  - cmd: /mayhem/bash_fuzzer
+    dictionary: /mayhem/bash.dict
+    timeout: 10
+    memory_limit: 256
+    max_length: 2048

@@ -1,0 +1,9 @@
+project: tree-sitter
+target: ruby-fuzzer
+
+cmds:
+  - cmd: /mayhem/ruby_fuzzer
+    dictionary: /mayhem/ruby.dict
+    timeout: 10
+    memory_limit: 256
+    max_length: 2048

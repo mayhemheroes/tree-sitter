@@ -1,0 +1,9 @@
+project: tree-sitter
+target: html-fuzzer
+
+cmds:
+  - cmd: /mayhem/html_fuzzer
+    dictionary: /mayhem/html.dict
+    timeout: 10
+    memory_limit: 256
+    max_length: 2048

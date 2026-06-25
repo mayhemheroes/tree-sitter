@@ -1,0 +1,9 @@
+project: tree-sitter
+target: jsdoc-fuzzer
+
+cmds:
+  - cmd: /mayhem/jsdoc_fuzzer
+    dictionary: /mayhem/jsdoc.dict
+    timeout: 10
+    memory_limit: 256
+    max_length: 2048

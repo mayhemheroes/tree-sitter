@@ -1,0 +1,9 @@
+project: tree-sitter
+target: typescript-fuzzer
+
+cmds:
+  - cmd: /mayhem/typescript_fuzzer
+    dictionary: /mayhem/typescript.dict
+    timeout: 10
+    memory_limit: 256
+    max_length: 2048

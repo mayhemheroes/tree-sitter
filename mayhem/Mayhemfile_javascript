@@ -1,0 +1,9 @@
+project: tree-sitter
+target: javascript-fuzzer
+
+cmds:
+  - cmd: /mayhem/javascript_fuzzer
+    dictionary: /mayhem/javascript.dict
+    timeout: 10
+    memory_limit: 256
+    max_length: 2048
